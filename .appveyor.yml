@@ -12,7 +12,7 @@ build_script:
 test_script:
   - cmd: npm test
 
-deploy:
-  provider: GitHubPages
-  on:
-    branch: main
+after_success:
+  - cmd: npm run deploy
+
+
