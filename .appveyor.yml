@@ -1,0 +1,18 @@
+version: 1.0.{build}
+
+image: Visual Studio 2022
+
+install:
+  - ps: Install-Product node 20
+
+build_script:
+  - cmd: npm install
+  - cmd: npm run build
+
+test_script:
+  - cmd: npm test
+
+after_success:
+  - cmd: npm run deploy
+
+
